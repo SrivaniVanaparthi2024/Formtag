@@ -1,0 +1,124 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form3</title>
+</head>
+<body style="background-color:darkblue; color: yellow; margin: 0px;">
+    <header style="background-color: darkgoldenrod; text-align: left; " >
+        <h2 style="margin: 0;">Sign Up</h2><hr>
+    </header>
+    <form name="Registration Form3" action="https://dummyweb.com" method="post">
+        <table  align="center" cellpadding="10px">
+           <tr>
+            <td colspan="2"><caption >
+                <h1><strong><u style="font-family:'Times New Roman';">Registrration Form</u></h1>
+                </strong></caption></td>
+           </tr>
+            <tr>
+                <td><label for="id1">First Name </label></td>
+                 <td> <input type="text" name="firstname" id="id1" placeholder="your first name"></td>
+            </tr>
+            <tr>
+                <td><label for="id2">Last Name </label></td>
+                <td><input type="text" name="lastname" id="id2" placeholder="your last name"></td>
+            </tr>
+            <tr>
+                <td><label for="id3">Screen Name </label></td>
+                <td><input type="text" name="screenname" id="id3" placeholder="your Screen name"></td>
+            </tr>
+            <tr>
+                <td><label for="dob">Date of Birth </label></td>
+                <td>
+                    <select name="day" id="day" required>
+                        <option value="">Day</option>
+                        <script>
+                            /* for(let d=1;d<=31;d++){
+                                 document.write('<option value="'+d+'">'+d+'</option>');
+                             } */
+                            const daySel = document.getElementById('day');
+                            for(let d=1;d<=31;d++){
+                                daySel.add(new Option(d,d));//text, value
+                            }
+                        </script>
+                    </select>
+                    <select name="month" id="month" required>
+                        <option value="">month</option>
+                    </select>
+                    <script>
+                        const monthSel=document.getElementById('month');
+                        const months =["January","February","March","April","May","June",
+    "July","August","September","October","November","December"];
+                        months.forEach((m,i)=>{
+                            monthSel.add(new Option(m,i+1));//text,value
+                        });
+                    </script>
+                    <select name="year" id="year">
+                        <option value="">year</option>
+                        <script>
+                            const yaers=document.getElementById('year');
+                            for(let y=1995;y<=2025;y++){
+                                yaers.add(new Option(y,y));
+                            }
+                        </script>
+                    </select>
+                </td>
+            </tr>
+           
+            <tr>
+                <!-- <td><label for="gen">Gender</label></td>
+                <td>Male<input type="radio" name="Gender" id="gen">
+                    Female<input type="radio" name="Gender" id="gen">
+                    Others<input type="radio" name="Gender" id="gen">
+                </td> -->
+                <td>Gender </td>
+                <td>
+                    <label for="m">Male</label>
+                    <input type="radio" name="Gender" id="m" value="male">
+                    <label for="f">Female</label>
+                    <input type="radio" name="Gender" id="f" value="female">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="con">Country</label></td>
+                <td>
+                    <select name="country" id="con">
+                        <option value="">India</option>
+                        <option value="">USA</option>
+                        <option value="">others</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="mail">e-mail </label></td>
+                <td><input type="email" name="email" id="mail" placeholder="your email id"></td>
+            </tr>
+            <tr>
+                <td><label for="ph">Mobile </label></td>
+                <td><input type="number" name="phone" id="ph" placeholder="your phone number"></td>
+            </tr>
+            <tr>
+                <td><label for="pwd">Password</label></td>
+                <td><input type="password" id="pwd" required></td>
+            </tr>
+            </tr >
+                <td><label for="conpwd">Confirm Password</label></td>
+                <td><input type="password" id="conpwd" required 
+                    oninput="this.setCustomValidity(this.value !==document.getElementById('pwd').value ?'Password do not match' : '')"></td>
+            <tr>
+         
+            
+        </table>
+          <footer style="background-color: darkgoldenrod; color: yellow; text-align: right; margin-bottom: 0px; padding: 10px;">
+                
+               
+                    <input type="submit" value="SUBMIT" style="background-color: rgb(40, 122, 40);">
+                    
+                    <input type="reset" value="Cancel" style="background-color:red;">
+               
+              
+            </footer>
+    </form>
+   
+</body>
+</html>
